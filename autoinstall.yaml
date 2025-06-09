@@ -1,0 +1,51 @@
+#cloud-config
+autoinstall:
+  version: 1
+  identity:
+    realname: "Douglas William"
+    hostname: DWdev-desktop
+    username: dwdev
+    password: "$y$j9T$XGvMLnXys8UqvTpK8xF2q0$wulKbyNdp91u2Jyg8.ARdAqgESdHyEecpEQLDcLppyD"
+  locale: pt_BR.utf8
+  keyboard:
+    layout: br
+    variant: abnt2
+  timezone: "America/Sao_Paulo"
+  packages:
+    - git
+    - wget
+    - curl
+    - vlc
+    - gnome-tweaks
+    - gnome-shell-extensions
+    - flatpak
+    - snapd
+    - visual-studio-code
+  flatpaks:
+    - name: mozilla-firefox
+      channel: stable
+      classic: false
+    - name: libreoffice
+      channel: stable
+      classic: false
+    - name: Whaler
+      channel: stable
+      classic: false
+    - name: steam
+      channel: stable
+      classic: true
+    - name: discord
+      channel: stable
+      classic: false
+    - name: hidamari
+      channel: stable
+  snaps:
+    - name: spotify
+      channel: stable
+      classic: false
+  codecs:
+    install: true
+  drivers:
+    install: true
+  updates: all
+  shutdown: reboot
